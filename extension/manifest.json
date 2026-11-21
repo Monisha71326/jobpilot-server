@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "JobPilot Autofill",
+  "version": "0.1.0",
+  "description": "Fills job application forms with your JobPilot profile. Never submits, never uploads files, never solves CAPTCHAs. You review and submit.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": ["http://127.0.0.1:8000/*", "http://localhost:8000/*"],
+  "optional_host_permissions": ["https://*/*", "http://*/*"],
+  "action": { "default_title": "JobPilot Autofill", "default_popup": "popup.html" },
+  "content_security_policy": { "extension_pages": "script-src 'self'; object-src 'self'" },
+  "icons": { "48": "icon.png", "128": "icon.png" }
+}

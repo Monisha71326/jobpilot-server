@@ -1,0 +1,19 @@
+# secrets & private data - never commit
+.env
+.env.*
+!.env.example
+backend/media/
+backend/db.sqlite3
+backend/staticfiles/
+*.sqlite3
+# python
+.venv/
+__pycache__/
+*.pyc
+# node
+node_modules/
+frontend/dist/
+# os/editor
+.DS_Store
+.idea/
+.vscode/

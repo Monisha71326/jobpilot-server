@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JobPilot Autofill</title>
+<style>
+  :root{color-scheme:light dark;--bg:#fff;--fg:#0f172a;--mut:#64748b;--bd:#e2e8f0;--brand:#4f46e5}
+  @media (prefers-color-scheme:dark){:root{--bg:#121726;--fg:#e8ebf5;--mut:#98a2bd;--bd:#252c42}}
+  body{width:340px;margin:0;padding:14px;background:var(--bg);color:var(--fg);font:13px/1.45 system-ui,sans-serif}
+  h1{font-size:15px;margin:0 0 2px} p{margin:4px 0;color:var(--mut)} label{display:block;margin:10px 0 3px;font-weight:600}
+  input{width:100%;box-sizing:border-box;padding:7px 9px;border:1px solid var(--bd);border-radius:8px;background:transparent;color:inherit}
+  button{margin-top:10px;width:100%;padding:9px;border:0;border-radius:9px;background:var(--brand);color:#fff;font-weight:600;cursor:pointer}
+  button.secondary{background:transparent;color:var(--fg);border:1px solid var(--bd)} button:disabled{opacity:.5;cursor:not-allowed}
+  #status{margin-top:10px;padding:8px 10px;border-radius:8px;border:1px solid var(--bd);display:none;white-space:pre-wrap}
+  #status.err{border-color:#ef4444;color:#ef4444}.ok{border-color:#10b981}
+  .warn{margin-top:10px;font-size:12px;color:var(--mut)}
+</style></head>
+<body>
+  <h1>JobPilot Autofill</h1>
+  <p>Fills the open form from your profile. <strong>You</strong> check it and press Submit.</p>
+  <label for="url">JobPilot address</label><input id="url" value="http://127.0.0.1:8000" autocomplete="off">
+  <label for="key">Autofill key</label><input id="key" type="password" placeholder="Paste from JobPilot → Settings" autocomplete="off">
+  <button id="save" class="secondary">Save & check connection</button>
+  <div id="app" class="warn"></div>
+  <button id="fill" disabled>Fill this page</button>
+  <div id="status" role="status" aria-live="polite"></div>
+  <p class="warn">Never submits forms, uploads files, handles passwords or solves CAPTCHAs. Attach your resume file yourself.</p>
+  <script src="popup.js"></script>
+</body></html>
