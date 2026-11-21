@@ -15,5 +15,5 @@ COPY backend/ ./
 COPY --from=web /web/dist /app/frontend/dist
 RUN chmod +x entrypoint.sh && useradd -m app && mkdir -p media && chown -R app /app
 USER app
-EXPOSE 8000
+EXPOSE 3000
 CMD ["./entrypoint.sh"]
